@@ -18,5 +18,18 @@ def login():
             flash('login successful', 'success')
         else:
             flash('Invalid username or password', 'Danger') 
-               
-    return render_template('login.html')            
+                
+    return render_template('login.html')  
+  
+
+@auth    
+     
+      
+       
+        
+         
+          
+           
+            
+             
+             
