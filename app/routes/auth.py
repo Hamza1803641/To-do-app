@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+
 auth_bp = Blueprint('auth', __name__)
 
 USER_CREDENTIALS = {
@@ -20,15 +21,13 @@ def login():
             flash('Invalid username or password', 'Danger') 
                 
     return render_template('login.html')  
-  
 
 @auth_bp.route('/logout')
 def logout():
     session.pop('user',None)
-    flash('Logout','info')    
-     
-      
-       
+    flash('Logout','info')
+    return redirect(url_for('auth.login'))
+    
         
          
           
