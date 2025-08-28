@@ -10,3 +10,8 @@ def view_tasks():
         return redirect(url_for('auth.login'))
     tasks=Task.query.all()
     return render_template('tasks.html',tasks=tasks)
+
+
+
+@tasks_bp.route('/add',methods=["GET","POST"])
+def 
