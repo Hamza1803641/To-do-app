@@ -12,7 +12,6 @@ def view_tasks():
     return render_template('tasks.html',tasks=tasks)
 
 
-
 @tasks_bp.route('/add',methods=["POST"])
 def add_task():
     if 'user' not in session:
@@ -24,5 +23,10 @@ def add_task():
         db.session.commit()
         flash('Task added seccessfully','success')
     return redirect(url_for(' tasks.view.task'))
+
+
+@tasks_bp.route('/toggle/<int:task_id',methods=["POST"])
+def toggle_status(task_id):
+    
         
      
