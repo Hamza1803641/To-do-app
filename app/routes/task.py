@@ -13,5 +13,9 @@ def view_tasks():
 
 
 
-@tasks_bp.route('/add',methods=["GET","POST"])
-def 
+@tasks_bp.route('/add',methods=["POST"])
+def add_task():
+     if 'user' not in session:
+        return redirect(url_for('auth.login'))
+    
+     
