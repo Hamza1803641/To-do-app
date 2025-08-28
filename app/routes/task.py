@@ -31,5 +31,10 @@ def toggle_status(task_id):
     if task:
         if task.status=='Pending':
             task.status=='Working'
+        elif task.status=='Working':
+            task.status=='Done'    
+    else:
+        task.status=='Pending'
+    db.session            
         
      
