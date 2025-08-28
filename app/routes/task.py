@@ -27,6 +27,9 @@ def add_task():
 
 @tasks_bp.route('/toggle/<int:task_id',methods=["POST"])
 def toggle_status(task_id):
-    
+    task=Task.query.grt(task_id)
+    if task:
+        if task.status=='Pending':
+            task.status=='Working'
         
      
